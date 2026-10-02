@@ -1,9 +1,0 @@
-ALTAIR — Airline Data Analysis
-
-Academic project: Python Data Analysis / DAE Lab
-Core analysis: Python with Pandas, NumPy and SciPy
-Presentation: HTML + CSS + JavaScript
-Deployment target: GitHub Pages
-
-Python is the primary analytical layer. The browser consumes the generated
-analysis.json and cleaned CSV while JavaScript provides the interactive UI.
