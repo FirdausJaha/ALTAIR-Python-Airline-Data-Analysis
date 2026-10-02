@@ -1,0 +1,72 @@
+{
+  "numpy_array_shape": [
+    12
+  ],
+  "numpy_reshaped_matrix_shape": [
+    3,
+    4
+  ],
+  "numpy_reshape_example": [
+    [
+      62.0,
+      62.0,
+      67.0,
+      71.0
+    ],
+    [
+      21.0,
+      55.0,
+      73.0,
+      36.0
+    ],
+    [
+      35.0,
+      13.0,
+      39.0,
+      71.0
+    ]
+  ],
+  "age_standardization": {
+    "mean_before": 45.504,
+    "std_before": 25.9297,
+    "mean_after": -0.0,
+    "std_after": 1.0
+  },
+  "label_encoding": {
+    "On Time": 0,
+    "Delayed": 1,
+    "Cancelled": 2
+  },
+  "one_hot_columns": [
+    "Status_Cancelled",
+    "Status_Delayed",
+    "Status_On Time"
+  ],
+  "one_hot_sample": [
+    {
+      "Status_Cancelled": 0,
+      "Status_Delayed": 0,
+      "Status_On Time": 1
+    },
+    {
+      "Status_Cancelled": 0,
+      "Status_Delayed": 0,
+      "Status_On Time": 1
+    },
+    {
+      "Status_Cancelled": 0,
+      "Status_Delayed": 0,
+      "Status_On Time": 1
+    },
+    {
+      "Status_Cancelled": 0,
+      "Status_Delayed": 1,
+      "Status_On Time": 0
+    },
+    {
+      "Status_Cancelled": 0,
+      "Status_Delayed": 0,
+      "Status_On Time": 1
+    }
+  ]
+}

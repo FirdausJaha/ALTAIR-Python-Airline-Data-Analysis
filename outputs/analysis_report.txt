@@ -1,0 +1,21 @@
+ALTAIR — Airline Data Analysis Report
+==========================================
+Input file: Airline Dataset Updated - v2.csv
+Records analyzed: 98,619
+Average age: 45.5
+Median age: 46.0
+Unique nationalities: 240
+Unique departure airports: 9,062
+Unique arrival airports: 9,024
+Duplicate rows removed: 0
+Invalid ages handled: 0
+Invalid dates detected: 0
+
+Insights
+--------
+- Cancelled is the most frequent flight status, with 32,942 of 98,619 records (33.4%).
+- China is the most frequently represented nationality, with 18,317 records.
+- San Pedro Airport is the most frequently represented departure airport, with 43 records.
+- August has the highest monthly departure count (8,544), while Sunday is the busiest weekday category (14,289).
+- North America contains the largest number of records (32,033) among the represented continents.
+- The approximate nationality-vs-airport-country classification contains 96,844 International and 1,775 Domestic records.

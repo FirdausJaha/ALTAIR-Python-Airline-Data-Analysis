@@ -1,0 +1,21 @@
+{
+  "input": "data/Airline Dataset Updated - v2.csv",
+  "cleaned_data": "data/airline_cleaned.csv",
+  "dashboard_data": "data/analysis.json",
+  "python_engine": "python/airline_analysis.py",
+  "dashboard_entry": "index.html",
+  "frontend_assets": [
+    "assets/app.js",
+    "assets/style.css"
+  ],
+  "report_outputs": [
+    "outputs/analysis_report.json",
+    "outputs/analysis_report.txt",
+    "outputs/analysis_report.md",
+    "outputs/data_profile.json",
+    "outputs/numpy_preprocessing_demo.json",
+    "outputs/visualizations/*.png"
+  ],
+  "rebuild_command": "python python/airline_analysis.py",
+  "deployment": "GitHub Pages"
+}

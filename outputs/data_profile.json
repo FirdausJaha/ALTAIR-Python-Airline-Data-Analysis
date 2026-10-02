@@ -1,0 +1,847 @@
+{
+  "dataset_before_cleaning": {
+    "shape": {
+      "rows": 98619,
+      "columns": 15
+    },
+    "columns": [
+      "Passenger ID",
+      "First Name",
+      "Last Name",
+      "Gender",
+      "Age",
+      "Nationality",
+      "Airport Name",
+      "Airport Country Code",
+      "Country Name",
+      "Airport Continent",
+      "Continents",
+      "Departure Date",
+      "Arrival Airport",
+      "Pilot Name",
+      "Flight Status"
+    ],
+    "dtypes": {
+      "Passenger ID": "object",
+      "First Name": "object",
+      "Last Name": "object",
+      "Gender": "object",
+      "Age": "int64",
+      "Nationality": "object",
+      "Airport Name": "object",
+      "Airport Country Code": "object",
+      "Country Name": "object",
+      "Airport Continent": "object",
+      "Continents": "object",
+      "Departure Date": "object",
+      "Arrival Airport": "object",
+      "Pilot Name": "object",
+      "Flight Status": "object"
+    },
+    "numeric_summary": {
+      "Age": {
+        "count": 98619.0,
+        "mean": 45.5,
+        "std": 25.93,
+        "min": 1.0,
+        "25%": 23.0,
+        "50%": 46.0,
+        "75%": 68.0,
+        "max": 90.0
+      }
+    },
+    "categorical_columns": [
+      "Passenger ID",
+      "First Name",
+      "Last Name",
+      "Gender",
+      "Nationality",
+      "Airport Name",
+      "Airport Country Code",
+      "Country Name",
+      "Airport Continent",
+      "Continents",
+      "Departure Date",
+      "Arrival Airport",
+      "Pilot Name",
+      "Flight Status"
+    ],
+    "categorical_summary": {
+      "Passenger ID": {
+        "count": 98619,
+        "unique": 98619,
+        "top": "ABVWIg",
+        "freq": 1
+      },
+      "First Name": {
+        "count": 98619,
+        "unique": 8437,
+        "top": "Gale",
+        "freq": 37
+      },
+      "Last Name": {
+        "count": 98619,
+        "unique": 41658,
+        "top": "Dyball",
+        "freq": 17
+      },
+      "Gender": {
+        "count": 98619,
+        "unique": 2,
+        "top": "Male",
+        "freq": 49598
+      },
+      "Nationality": {
+        "count": 98619,
+        "unique": 240,
+        "top": "China",
+        "freq": 18317
+      },
+      "Airport Name": {
+        "count": 98619,
+        "unique": 9062,
+        "top": "San Pedro Airport",
+        "freq": 43
+      },
+      "Airport Country Code": {
+        "count": 98619,
+        "unique": 235,
+        "top": "US",
+        "freq": 22104
+      },
+      "Country Name": {
+        "count": 98619,
+        "unique": 235,
+        "top": "United States",
+        "freq": 22104
+      },
+      "Airport Continent": {
+        "count": 98619,
+        "unique": 6,
+        "top": "NAM",
+        "freq": 32033
+      },
+      "Continents": {
+        "count": 98619,
+        "unique": 6,
+        "top": "North America",
+        "freq": 32033
+      },
+      "Departure Date": {
+        "count": 98619,
+        "unique": 364,
+        "top": "7/22/2022",
+        "freq": 325
+      },
+      "Arrival Airport": {
+        "count": 98619,
+        "unique": 9024,
+        "top": "0",
+        "freq": 873
+      },
+      "Pilot Name": {
+        "count": 98619,
+        "unique": 98610,
+        "top": "Perry Burhouse",
+        "freq": 2
+      },
+      "Flight Status": {
+        "count": 98619,
+        "unique": 3,
+        "top": "Cancelled",
+        "freq": 32942
+      }
+    },
+    "missing_values": {
+      "Passenger ID": 0,
+      "First Name": 0,
+      "Last Name": 0,
+      "Gender": 0,
+      "Age": 0,
+      "Nationality": 0,
+      "Airport Name": 0,
+      "Airport Country Code": 0,
+      "Country Name": 0,
+      "Airport Continent": 0,
+      "Continents": 0,
+      "Departure Date": 0,
+      "Arrival Airport": 0,
+      "Pilot Name": 0,
+      "Flight Status": 0
+    },
+    "duplicate_rows": 0
+  },
+  "dataset_after_cleaning": {
+    "shape": {
+      "rows": 98619,
+      "columns": 18
+    },
+    "columns": [
+      "Gender",
+      "Age",
+      "Nationality",
+      "Airport Name",
+      "Country Name",
+      "Continents",
+      "Departure Date",
+      "Arrival Airport",
+      "Flight Status",
+      "Departure Year",
+      "Departure Month",
+      "Departure Month Name",
+      "Departure Day",
+      "Day of Week",
+      "Weekend/Weekday",
+      "Age Group",
+      "Domestic/International",
+      "Age Histogram"
+    ],
+    "dtypes": {
+      "Gender": "string",
+      "Age": "Int64",
+      "Nationality": "string",
+      "Airport Name": "string",
+      "Country Name": "string",
+      "Continents": "string",
+      "Departure Date": "datetime64[ns]",
+      "Arrival Airport": "string",
+      "Flight Status": "string",
+      "Departure Year": "Int64",
+      "Departure Month": "Int64",
+      "Departure Month Name": "object",
+      "Departure Day": "Int64",
+      "Day of Week": "object",
+      "Weekend/Weekday": "object",
+      "Age Group": "object",
+      "Domestic/International": "object",
+      "Age Histogram": "object"
+    },
+    "numeric_summary": {
+      "Age": {
+        "count": 98619.0,
+        "mean": 45.5,
+        "std": 25.93,
+        "min": 1.0,
+        "25%": 23.0,
+        "50%": 46.0,
+        "75%": 68.0,
+        "max": 90.0
+      },
+      "Departure Year": {
+        "count": 98619.0,
+        "mean": 2022.0,
+        "std": 0.0,
+        "min": 2022.0,
+        "25%": 2022.0,
+        "50%": 2022.0,
+        "75%": 2022.0,
+        "max": 2022.0
+      },
+      "Departure Month": {
+        "count": 98619.0,
+        "mean": 6.5,
+        "std": 3.43,
+        "min": 1.0,
+        "25%": 4.0,
+        "50%": 7.0,
+        "75%": 9.0,
+        "max": 12.0
+      },
+      "Departure Day": {
+        "count": 98619.0,
+        "mean": 15.65,
+        "std": 8.74,
+        "min": 1.0,
+        "25%": 8.0,
+        "50%": 16.0,
+        "75%": 23.0,
+        "max": 31.0
+      }
+    },
+    "categorical_columns": [
+      "Gender",
+      "Nationality",
+      "Airport Name",
+      "Country Name",
+      "Continents",
+      "Arrival Airport",
+      "Flight Status",
+      "Departure Month Name",
+      "Day of Week",
+      "Weekend/Weekday",
+      "Age Group",
+      "Domestic/International",
+      "Age Histogram"
+    ],
+    "categorical_summary": {
+      "Gender": {
+        "count": 98619,
+        "unique": 2,
+        "top": "Male",
+        "freq": 49598
+      },
+      "Nationality": {
+        "count": 98619,
+        "unique": 240,
+        "top": "China",
+        "freq": 18317
+      },
+      "Airport Name": {
+        "count": 98619,
+        "unique": 9062,
+        "top": "San Pedro Airport",
+        "freq": 43
+      },
+      "Country Name": {
+        "count": 98619,
+        "unique": 235,
+        "top": "United States",
+        "freq": 22104
+      },
+      "Continents": {
+        "count": 98619,
+        "unique": 6,
+        "top": "North America",
+        "freq": 32033
+      },
+      "Arrival Airport": {
+        "count": 98619,
+        "unique": 9024,
+        "top": "0",
+        "freq": 873
+      },
+      "Flight Status": {
+        "count": 98619,
+        "unique": 3,
+        "top": "Cancelled",
+        "freq": 32942
+      },
+      "Departure Month Name": {
+        "count": 98619,
+        "unique": 12,
+        "top": "August",
+        "freq": 8544
+      },
+      "Day of Week": {
+        "count": 98619,
+        "unique": 7,
+        "top": "Sunday",
+        "freq": 14289
+      },
+      "Weekend/Weekday": {
+        "count": 98619,
+        "unique": 2,
+        "top": "Weekday",
+        "freq": 70473
+      },
+      "Age Group": {
+        "count": 98619,
+        "unique": 5,
+        "top": "Senior",
+        "freq": 33872
+      },
+      "Domestic/International": {
+        "count": 98619,
+        "unique": 2,
+        "top": "International",
+        "freq": 96844
+      },
+      "Age Histogram": {
+        "count": 98619,
+        "unique": 10,
+        "top": "54–63",
+        "freq": 10023
+      }
+    },
+    "missing_values": {
+      "Gender": 0,
+      "Age": 0,
+      "Nationality": 0,
+      "Airport Name": 0,
+      "Country Name": 0,
+      "Continents": 0,
+      "Departure Date": 0,
+      "Arrival Airport": 0,
+      "Flight Status": 0,
+      "Departure Year": 0,
+      "Departure Month": 0,
+      "Departure Month Name": 0,
+      "Departure Day": 0,
+      "Day of Week": 0,
+      "Weekend/Weekday": 0,
+      "Age Group": 0,
+      "Domestic/International": 0,
+      "Age Histogram": 0
+    },
+    "duplicate_rows": 0
+  },
+  "quality": {
+    "raw_rows": 98619,
+    "raw_columns": 15,
+    "duplicate_rows_detected": 0,
+    "duplicate_rows_removed": 0,
+    "missing_values_before_cleaning": 0,
+    "missing_values_after_cleaning": 0,
+    "invalid_age_values": 0,
+    "invalid_dates": 0,
+    "removed_columns": [
+      "Passenger ID",
+      "First Name",
+      "Last Name",
+      "Pilot Name",
+      "Airport Continent",
+      "Airport Country Code"
+    ],
+    "rows_after_cleaning": 98619,
+    "columns_after_cleaning": 9
+  },
+  "numeric_profile": {
+    "Age": {
+      "count": 98619,
+      "mean": 45.5,
+      "median": 46.0,
+      "minimum": 1.0,
+      "maximum": 90.0,
+      "std": 25.93
+    },
+    "Departure Year": {
+      "count": 98619,
+      "mean": 2022.0,
+      "median": 2022.0,
+      "minimum": 2022.0,
+      "maximum": 2022.0,
+      "std": 0.0
+    },
+    "Departure Month": {
+      "count": 98619,
+      "mean": 6.5,
+      "median": 7.0,
+      "minimum": 1.0,
+      "maximum": 12.0,
+      "std": 3.43
+    },
+    "Departure Day": {
+      "count": 98619,
+      "mean": 15.65,
+      "median": 16.0,
+      "minimum": 1.0,
+      "maximum": 31.0,
+      "std": 8.74
+    }
+  },
+  "categorical_profile": {
+    "Gender": {
+      "unique_values": 2,
+      "top_values": [
+        {
+          "label": "Male",
+          "value": 49598
+        },
+        {
+          "label": "Female",
+          "value": 49021
+        }
+      ]
+    },
+    "Nationality": {
+      "unique_values": 240,
+      "top_values": [
+        {
+          "label": "China",
+          "value": 18317
+        },
+        {
+          "label": "Indonesia",
+          "value": 10559
+        },
+        {
+          "label": "Russia",
+          "value": 5693
+        },
+        {
+          "label": "Philippines",
+          "value": 5239
+        },
+        {
+          "label": "Brazil",
+          "value": 3791
+        },
+        {
+          "label": "Portugal",
+          "value": 3299
+        },
+        {
+          "label": "Poland",
+          "value": 3245
+        },
+        {
+          "label": "France",
+          "value": 2907
+        },
+        {
+          "label": "Sweden",
+          "value": 2397
+        },
+        {
+          "label": "United States",
+          "value": 2105
+        }
+      ]
+    },
+    "Airport Name": {
+      "unique_values": 9062,
+      "top_values": [
+        {
+          "label": "San Pedro Airport",
+          "value": 43
+        },
+        {
+          "label": "Santa Maria Airport",
+          "value": 38
+        },
+        {
+          "label": "Böblingen Flugfeld",
+          "value": 36
+        },
+        {
+          "label": "Santa Ana Airport",
+          "value": 35
+        },
+        {
+          "label": "San Fernando Airport",
+          "value": 31
+        },
+        {
+          "label": "Mae Hong Son Airport",
+          "value": 29
+        },
+        {
+          "label": "Santa Rosa Airport",
+          "value": 28
+        },
+        {
+          "label": "Capital City Airport",
+          "value": 28
+        },
+        {
+          "label": "Cochrane Airport",
+          "value": 28
+        },
+        {
+          "label": "Bathurst Airport",
+          "value": 27
+        }
+      ]
+    },
+    "Country Name": {
+      "unique_values": 235,
+      "top_values": [
+        {
+          "label": "United States",
+          "value": 22104
+        },
+        {
+          "label": "Australia",
+          "value": 6370
+        },
+        {
+          "label": "Canada",
+          "value": 5424
+        },
+        {
+          "label": "Brazil",
+          "value": 4504
+        },
+        {
+          "label": "Papua New Guinea",
+          "value": 4081
+        },
+        {
+          "label": "China",
+          "value": 2779
+        },
+        {
+          "label": "Indonesia",
+          "value": 2358
+        },
+        {
+          "label": "Russian Federation",
+          "value": 2247
+        },
+        {
+          "label": "Colombia",
+          "value": 1643
+        },
+        {
+          "label": "India",
+          "value": 1486
+        }
+      ]
+    },
+    "Continents": {
+      "unique_values": 6,
+      "top_values": [
+        {
+          "label": "North America",
+          "value": 32033
+        },
+        {
+          "label": "Asia",
+          "value": 18637
+        },
+        {
+          "label": "Oceania",
+          "value": 13866
+        },
+        {
+          "label": "Europe",
+          "value": 12335
+        },
+        {
+          "label": "Africa",
+          "value": 11030
+        },
+        {
+          "label": "South America",
+          "value": 10718
+        }
+      ]
+    },
+    "Arrival Airport": {
+      "unique_values": 9024,
+      "top_values": [
+        {
+          "label": "0",
+          "value": 873
+        },
+        {
+          "label": "JNB",
+          "value": 37
+        },
+        {
+          "label": "PHM",
+          "value": 36
+        },
+        {
+          "label": "MPT",
+          "value": 32
+        },
+        {
+          "label": "YTY",
+          "value": 27
+        },
+        {
+          "label": "PCO",
+          "value": 27
+        },
+        {
+          "label": "ZRZ",
+          "value": 26
+        },
+        {
+          "label": "GTF",
+          "value": 25
+        },
+        {
+          "label": "AHT",
+          "value": 25
+        },
+        {
+          "label": "DZI",
+          "value": 25
+        }
+      ]
+    },
+    "Flight Status": {
+      "unique_values": 3,
+      "top_values": [
+        {
+          "label": "Cancelled",
+          "value": 32942
+        },
+        {
+          "label": "On Time",
+          "value": 32846
+        },
+        {
+          "label": "Delayed",
+          "value": 32831
+        }
+      ]
+    },
+    "Departure Month Name": {
+      "unique_values": 12,
+      "top_values": [
+        {
+          "label": "August",
+          "value": 8544
+        },
+        {
+          "label": "May",
+          "value": 8496
+        },
+        {
+          "label": "July",
+          "value": 8451
+        },
+        {
+          "label": "March",
+          "value": 8431
+        },
+        {
+          "label": "January",
+          "value": 8416
+        },
+        {
+          "label": "October",
+          "value": 8415
+        },
+        {
+          "label": "September",
+          "value": 8149
+        },
+        {
+          "label": "June",
+          "value": 8128
+        },
+        {
+          "label": "November",
+          "value": 8053
+        },
+        {
+          "label": "April",
+          "value": 7959
+        }
+      ]
+    },
+    "Day of Week": {
+      "unique_values": 7,
+      "top_values": [
+        {
+          "label": "Sunday",
+          "value": 14289
+        },
+        {
+          "label": "Thursday",
+          "value": 14227
+        },
+        {
+          "label": "Friday",
+          "value": 14227
+        },
+        {
+          "label": "Tuesday",
+          "value": 14048
+        },
+        {
+          "label": "Monday",
+          "value": 14032
+        },
+        {
+          "label": "Wednesday",
+          "value": 13939
+        },
+        {
+          "label": "Saturday",
+          "value": 13857
+        }
+      ]
+    },
+    "Weekend/Weekday": {
+      "unique_values": 2,
+      "top_values": [
+        {
+          "label": "Weekday",
+          "value": 70473
+        },
+        {
+          "label": "Weekend",
+          "value": 28146
+        }
+      ]
+    },
+    "Age Group": {
+      "unique_values": 5,
+      "top_values": [
+        {
+          "label": "Senior",
+          "value": 33872
+        },
+        {
+          "label": "Adult",
+          "value": 32909
+        },
+        {
+          "label": "Child",
+          "value": 13047
+        },
+        {
+          "label": "Young Adult",
+          "value": 11107
+        },
+        {
+          "label": "Teenager",
+          "value": 7684
+        }
+      ]
+    },
+    "Domestic/International": {
+      "unique_values": 2,
+      "top_values": [
+        {
+          "label": "International",
+          "value": 96844
+        },
+        {
+          "label": "Domestic",
+          "value": 1775
+        }
+      ]
+    },
+    "Age Histogram": {
+      "unique_values": 10,
+      "top_values": [
+        {
+          "label": "54–63",
+          "value": 10023
+        },
+        {
+          "label": "18–27",
+          "value": 9956
+        },
+        {
+          "label": "45–54",
+          "value": 9908
+        },
+        {
+          "label": "36–45",
+          "value": 9869
+        },
+        {
+          "label": "63–72",
+          "value": 9849
+        },
+        {
+          "label": "9–18",
+          "value": 9847
+        },
+        {
+          "label": "81–90",
+          "value": 9815
+        },
+        {
+          "label": "1–9",
+          "value": 9799
+        },
+        {
+          "label": "72–81",
+          "value": 9788
+        },
+        {
+          "label": "27–36",
+          "value": 9765
+        }
+      ]
+    }
+  }
+}

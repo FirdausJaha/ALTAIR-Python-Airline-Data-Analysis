@@ -1,0 +1,2174 @@
+{
+  "project": "ALTAIR — Airline Data Analysis",
+  "purpose": "Analyze passenger demographics, geographic distribution, flight status, airport activity, time patterns, and categorical relationships.",
+  "record_count": 98619,
+  "passenger_statistics": {
+    "count": 98619,
+    "mean": 45.5,
+    "median": 46.0,
+    "mode": 29.0,
+    "minimum": 1,
+    "maximum": 90,
+    "range": 89,
+    "standard_deviation": 25.93,
+    "variance": 672.36,
+    "quartiles": {
+      "Q1": 23.0,
+      "Q2": 46.0,
+      "Q3": 68.0
+    }
+  },
+  "key_distributions": {
+    "gender": [
+      {
+        "label": "Male",
+        "value": 49598
+      },
+      {
+        "label": "Female",
+        "value": 49021
+      }
+    ],
+    "age_group": [
+      {
+        "label": "Child",
+        "value": 13047
+      },
+      {
+        "label": "Teenager",
+        "value": 7684
+      },
+      {
+        "label": "Young Adult",
+        "value": 11107
+      },
+      {
+        "label": "Adult",
+        "value": 32909
+      },
+      {
+        "label": "Senior",
+        "value": 33872
+      }
+    ],
+    "flight_status": [
+      {
+        "label": "Cancelled",
+        "value": 32942
+      },
+      {
+        "label": "Delayed",
+        "value": 32831
+      },
+      {
+        "label": "On Time",
+        "value": 32846
+      }
+    ],
+    "continent": [
+      {
+        "label": "Africa",
+        "value": 11030
+      },
+      {
+        "label": "Asia",
+        "value": 18637
+      },
+      {
+        "label": "Europe",
+        "value": 12335
+      },
+      {
+        "label": "North America",
+        "value": 32033
+      },
+      {
+        "label": "Oceania",
+        "value": 13866
+      },
+      {
+        "label": "South America",
+        "value": 10718
+      }
+    ]
+  },
+  "top_airports": {
+    "departure": [
+      {
+        "label": "San Pedro Airport",
+        "value": 43
+      },
+      {
+        "label": "Santa Maria Airport",
+        "value": 38
+      },
+      {
+        "label": "Böblingen Flugfeld",
+        "value": 36
+      },
+      {
+        "label": "Santa Ana Airport",
+        "value": 35
+      },
+      {
+        "label": "San Fernando Airport",
+        "value": 31
+      },
+      {
+        "label": "Mae Hong Son Airport",
+        "value": 29
+      },
+      {
+        "label": "Santa Rosa Airport",
+        "value": 28
+      },
+      {
+        "label": "Capital City Airport",
+        "value": 28
+      },
+      {
+        "label": "Cochrane Airport",
+        "value": 28
+      },
+      {
+        "label": "Bathurst Airport",
+        "value": 27
+      }
+    ],
+    "arrival": [
+      {
+        "label": "0",
+        "value": 873
+      },
+      {
+        "label": "JNB",
+        "value": 37
+      },
+      {
+        "label": "PHM",
+        "value": 36
+      },
+      {
+        "label": "MPT",
+        "value": 32
+      },
+      {
+        "label": "YTY",
+        "value": 27
+      },
+      {
+        "label": "PCO",
+        "value": 27
+      },
+      {
+        "label": "ZRZ",
+        "value": 26
+      },
+      {
+        "label": "GTF",
+        "value": 25
+      },
+      {
+        "label": "AHT",
+        "value": 25
+      },
+      {
+        "label": "DZI",
+        "value": 25
+      }
+    ]
+  },
+  "top_nationalities": [
+    {
+      "label": "China",
+      "value": 18317
+    },
+    {
+      "label": "Indonesia",
+      "value": 10559
+    },
+    {
+      "label": "Russia",
+      "value": 5693
+    },
+    {
+      "label": "Philippines",
+      "value": 5239
+    },
+    {
+      "label": "Brazil",
+      "value": 3791
+    },
+    {
+      "label": "Portugal",
+      "value": 3299
+    },
+    {
+      "label": "Poland",
+      "value": 3245
+    },
+    {
+      "label": "France",
+      "value": 2907
+    },
+    {
+      "label": "Sweden",
+      "value": 2397
+    },
+    {
+      "label": "United States",
+      "value": 2105
+    }
+  ],
+  "statistical_tests": {
+    "gender_vs_status": {
+      "chi2": 1.1169,
+      "p_value": 0.572099531979283,
+      "degrees_of_freedom": 2,
+      "significant_at_0_05": false,
+      "sample_size": 98619
+    },
+    "continent_vs_status": {
+      "chi2": 5.658,
+      "p_value": 0.8431323616966917,
+      "degrees_of_freedom": 10,
+      "significant_at_0_05": false,
+      "sample_size": 98619
+    },
+    "age_group_vs_status": {
+      "chi2": 1.9072,
+      "p_value": 0.9837244523006328,
+      "degrees_of_freedom": 8,
+      "significant_at_0_05": false,
+      "sample_size": 98619
+    },
+    "domestic_vs_status": {
+      "chi2": 1.0493,
+      "p_value": 0.5917551692848644,
+      "degrees_of_freedom": 2,
+      "significant_at_0_05": false,
+      "sample_size": 98619
+    }
+  },
+  "insights": [
+    {
+      "icon": "✈",
+      "title": "Flight status",
+      "text": "Cancelled is the most frequent flight status, with 32,942 of 98,619 records (33.4%)."
+    },
+    {
+      "icon": "🧭",
+      "title": "Nationality",
+      "text": "China is the most frequently represented nationality, with 18,317 records."
+    },
+    {
+      "icon": "🏢",
+      "title": "Airport activity",
+      "text": "San Pedro Airport is the most frequently represented departure airport, with 43 records."
+    },
+    {
+      "icon": "📅",
+      "title": "Time pattern",
+      "text": "August has the highest monthly departure count (8,544), while Sunday is the busiest weekday category (14,289)."
+    },
+    {
+      "icon": "🌍",
+      "title": "Geographic distribution",
+      "text": "North America contains the largest number of records (32,033) among the represented continents."
+    },
+    {
+      "icon": "🌐",
+      "title": "Travel classification",
+      "text": "The approximate nationality-vs-airport-country classification contains 96,844 International and 1,775 Domestic records."
+    }
+  ],
+  "limitations": [
+    "The source dataset represents records in a single dataset period rather than a live airline operation.",
+    "Domestic/International is an approximate classification because it compares nationality with airport country; it is not a ticket itinerary field.",
+    "The dashboard presents associations and descriptive patterns; it does not infer causal relationships."
+  ],
+  "extended_eda": {
+    "status_distribution": [
+      {
+        "Flight Status": "Cancelled",
+        "Records": 32942,
+        "Percentage of Records": 33.4
+      },
+      {
+        "Flight Status": "On Time",
+        "Records": 32846,
+        "Percentage of Records": 33.31
+      },
+      {
+        "Flight Status": "Delayed",
+        "Records": 32831,
+        "Percentage of Records": 33.29
+      }
+    ],
+    "gender_age_summary": [
+      {
+        "Gender": "Female",
+        "Records": 49021,
+        "Mean Age": 45.52,
+        "Median Age": 46.0,
+        "Minimum Age": 1,
+        "Maximum Age": 90,
+        "Std. Deviation": 25.9
+      },
+      {
+        "Gender": "Male",
+        "Records": 49598,
+        "Mean Age": 45.49,
+        "Median Age": 46.0,
+        "Minimum Age": 1,
+        "Maximum Age": 90,
+        "Std. Deviation": 25.96
+      }
+    ],
+    "age_group_summary": [
+      {
+        "Age Group": "Child",
+        "Cancelled": 4349,
+        "Delayed": 4352,
+        "On Time": 4346,
+        "Total": 13047,
+        "Percentage": 13.23
+      },
+      {
+        "Age Group": "Teenager",
+        "Cancelled": 2576,
+        "Delayed": 2545,
+        "On Time": 2563,
+        "Total": 7684,
+        "Percentage": 7.79
+      },
+      {
+        "Age Group": "Young Adult",
+        "Cancelled": 3732,
+        "Delayed": 3650,
+        "On Time": 3725,
+        "Total": 11107,
+        "Percentage": 11.26
+      },
+      {
+        "Age Group": "Adult",
+        "Cancelled": 10990,
+        "Delayed": 10935,
+        "On Time": 10984,
+        "Total": 32909,
+        "Percentage": 33.37
+      },
+      {
+        "Age Group": "Senior",
+        "Cancelled": 11295,
+        "Delayed": 11349,
+        "On Time": 11228,
+        "Total": 33872,
+        "Percentage": 34.35
+      }
+    ],
+    "continent_summary": [
+      {
+        "Continents": "North America",
+        "Records": 32033,
+        "Average_Age": 45.58,
+        "Nationalities": 232,
+        "Airports": 2922,
+        "Percentage": 32.48
+      },
+      {
+        "Continents": "Asia",
+        "Records": 18637,
+        "Average_Age": 45.65,
+        "Nationalities": 217,
+        "Airports": 1718,
+        "Percentage": 18.9
+      },
+      {
+        "Continents": "Oceania",
+        "Records": 13866,
+        "Average_Age": 45.37,
+        "Nationalities": 214,
+        "Airports": 1298,
+        "Percentage": 14.06
+      },
+      {
+        "Continents": "Europe",
+        "Records": 12335,
+        "Average_Age": 45.22,
+        "Nationalities": 209,
+        "Airports": 1150,
+        "Percentage": 12.51
+      },
+      {
+        "Continents": "Africa",
+        "Records": 11030,
+        "Average_Age": 45.64,
+        "Nationalities": 207,
+        "Airports": 1030,
+        "Percentage": 11.18
+      },
+      {
+        "Continents": "South America",
+        "Records": 10718,
+        "Average_Age": 45.37,
+        "Nationalities": 206,
+        "Airports": 973,
+        "Percentage": 10.87
+      }
+    ],
+    "country_summary_top20": [
+      {
+        "Country Name": "United States",
+        "Records": 22104,
+        "Average_Age": 45.56,
+        "Percentage": 22.41
+      },
+      {
+        "Country Name": "Australia",
+        "Records": 6370,
+        "Average_Age": 45.4,
+        "Percentage": 6.46
+      },
+      {
+        "Country Name": "Canada",
+        "Records": 5424,
+        "Average_Age": 45.69,
+        "Percentage": 5.5
+      },
+      {
+        "Country Name": "Brazil",
+        "Records": 4504,
+        "Average_Age": 45.72,
+        "Percentage": 4.57
+      },
+      {
+        "Country Name": "Papua New Guinea",
+        "Records": 4081,
+        "Average_Age": 45.47,
+        "Percentage": 4.14
+      },
+      {
+        "Country Name": "China",
+        "Records": 2779,
+        "Average_Age": 45.19,
+        "Percentage": 2.82
+      },
+      {
+        "Country Name": "Indonesia",
+        "Records": 2358,
+        "Average_Age": 45.64,
+        "Percentage": 2.39
+      },
+      {
+        "Country Name": "Russian Federation",
+        "Records": 2247,
+        "Average_Age": 45.69,
+        "Percentage": 2.28
+      },
+      {
+        "Country Name": "Colombia",
+        "Records": 1643,
+        "Average_Age": 45.84,
+        "Percentage": 1.67
+      },
+      {
+        "Country Name": "India",
+        "Records": 1486,
+        "Average_Age": 45.13,
+        "Percentage": 1.51
+      },
+      {
+        "Country Name": "France",
+        "Records": 1382,
+        "Average_Age": 44.89,
+        "Percentage": 1.4
+      },
+      {
+        "Country Name": "United Kingdom",
+        "Records": 1371,
+        "Average_Age": 44.74,
+        "Percentage": 1.39
+      },
+      {
+        "Country Name": "Argentina",
+        "Records": 1203,
+        "Average_Age": 45.32,
+        "Percentage": 1.22
+      },
+      {
+        "Country Name": "Germany",
+        "Records": 1161,
+        "Average_Age": 45.09,
+        "Percentage": 1.18
+      },
+      {
+        "Country Name": "Mexico",
+        "Records": 1073,
+        "Average_Age": 44.94,
+        "Percentage": 1.09
+      },
+      {
+        "Country Name": "Japan",
+        "Records": 1004,
+        "Average_Age": 45.95,
+        "Percentage": 1.02
+      },
+      {
+        "Country Name": "South Africa",
+        "Records": 945,
+        "Average_Age": 46.73,
+        "Percentage": 0.96
+      },
+      {
+        "Country Name": "Iran, Islamic Republic of",
+        "Records": 816,
+        "Average_Age": 45.79,
+        "Percentage": 0.83
+      },
+      {
+        "Country Name": "Philippines",
+        "Records": 778,
+        "Average_Age": 47.31,
+        "Percentage": 0.79
+      },
+      {
+        "Country Name": "Venezuela, Bolivarian Republic of",
+        "Records": 730,
+        "Average_Age": 45.1,
+        "Percentage": 0.74
+      }
+    ],
+    "airport_summary_top20": [
+      {
+        "Airport Name": "San Pedro Airport",
+        "Records": 43,
+        "Cancelled": 11,
+        "Delayed": 15,
+        "On Time": 17,
+        "Percentage": 0.04
+      },
+      {
+        "Airport Name": "Santa Maria Airport",
+        "Records": 38,
+        "Cancelled": 12,
+        "Delayed": 17,
+        "On Time": 9,
+        "Percentage": 0.04
+      },
+      {
+        "Airport Name": "Böblingen Flugfeld",
+        "Records": 36,
+        "Cancelled": 13,
+        "Delayed": 10,
+        "On Time": 13,
+        "Percentage": 0.04
+      },
+      {
+        "Airport Name": "Santa Ana Airport",
+        "Records": 35,
+        "Cancelled": 6,
+        "Delayed": 14,
+        "On Time": 15,
+        "Percentage": 0.04
+      },
+      {
+        "Airport Name": "San Fernando Airport",
+        "Records": 31,
+        "Cancelled": 11,
+        "Delayed": 9,
+        "On Time": 11,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Mae Hong Son Airport",
+        "Records": 29,
+        "Cancelled": 13,
+        "Delayed": 8,
+        "On Time": 8,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Santa Rosa Airport",
+        "Records": 28,
+        "Cancelled": 6,
+        "Delayed": 16,
+        "On Time": 6,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Capital City Airport",
+        "Records": 28,
+        "Cancelled": 12,
+        "Delayed": 10,
+        "On Time": 6,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Cochrane Airport",
+        "Records": 28,
+        "Cancelled": 9,
+        "Delayed": 10,
+        "On Time": 9,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Bathurst Airport",
+        "Records": 27,
+        "Cancelled": 11,
+        "Delayed": 9,
+        "On Time": 7,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Lake County Airport",
+        "Records": 27,
+        "Cancelled": 4,
+        "Delayed": 13,
+        "On Time": 10,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Herrera Airport",
+        "Records": 27,
+        "Cancelled": 11,
+        "Delayed": 9,
+        "On Time": 7,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Marion Municipal Airport",
+        "Records": 27,
+        "Cancelled": 12,
+        "Delayed": 10,
+        "On Time": 5,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Yangzhou Taizhou Airport",
+        "Records": 27,
+        "Cancelled": 13,
+        "Delayed": 9,
+        "On Time": 5,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Nogales International Airport",
+        "Records": 27,
+        "Cancelled": 11,
+        "Delayed": 6,
+        "On Time": 10,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "La Florida Airport",
+        "Records": 27,
+        "Cancelled": 9,
+        "Delayed": 12,
+        "On Time": 6,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Punta Colorada Airport",
+        "Records": 27,
+        "Cancelled": 7,
+        "Delayed": 11,
+        "On Time": 9,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Mount Pleasant Airport",
+        "Records": 27,
+        "Cancelled": 8,
+        "Delayed": 6,
+        "On Time": 13,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Grant County Airport",
+        "Records": 26,
+        "Cancelled": 7,
+        "Delayed": 12,
+        "On Time": 7,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Lawrence Municipal Airport",
+        "Records": 26,
+        "Cancelled": 7,
+        "Delayed": 10,
+        "On Time": 9,
+        "Percentage": 0.03
+      }
+    ],
+    "arrival_airport_summary_top20": [
+      {
+        "Arrival Airport": "0",
+        "Records": 873,
+        "Percentage": 0.89
+      },
+      {
+        "Arrival Airport": "JNB",
+        "Records": 37,
+        "Percentage": 0.04
+      },
+      {
+        "Arrival Airport": "PHM",
+        "Records": 36,
+        "Percentage": 0.04
+      },
+      {
+        "Arrival Airport": "MPT",
+        "Records": 32,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "YTY",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "PCO",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "ZRZ",
+        "Records": 26,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "GTF",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "AHT",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "DZI",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "RTI",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Arrival Airport": "HKG",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "RZS",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "SGL",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "RCH",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "MUC",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "CLG",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "IZA",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "LHW",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Arrival Airport": "WMP",
+        "Records": 23,
+        "Percentage": 0.02
+      }
+    ],
+    "monthly_summary": [
+      {
+        "Month": "January",
+        "Cancelled": 2747,
+        "Delayed": 2868,
+        "On Time": 2801,
+        "Total Records": 8416,
+        "Percentage": 8.53
+      },
+      {
+        "Month": "February",
+        "Cancelled": 2565,
+        "Delayed": 2537,
+        "On Time": 2551,
+        "Total Records": 7653,
+        "Percentage": 7.76
+      },
+      {
+        "Month": "March",
+        "Cancelled": 2776,
+        "Delayed": 2794,
+        "On Time": 2861,
+        "Total Records": 8431,
+        "Percentage": 8.55
+      },
+      {
+        "Month": "April",
+        "Cancelled": 2645,
+        "Delayed": 2715,
+        "On Time": 2599,
+        "Total Records": 7959,
+        "Percentage": 8.07
+      },
+      {
+        "Month": "May",
+        "Cancelled": 2846,
+        "Delayed": 2853,
+        "On Time": 2797,
+        "Total Records": 8496,
+        "Percentage": 8.61
+      },
+      {
+        "Month": "June",
+        "Cancelled": 2756,
+        "Delayed": 2678,
+        "On Time": 2694,
+        "Total Records": 8128,
+        "Percentage": 8.24
+      },
+      {
+        "Month": "July",
+        "Cancelled": 2800,
+        "Delayed": 2778,
+        "On Time": 2873,
+        "Total Records": 8451,
+        "Percentage": 8.57
+      },
+      {
+        "Month": "August",
+        "Cancelled": 2864,
+        "Delayed": 2805,
+        "On Time": 2875,
+        "Total Records": 8544,
+        "Percentage": 8.66
+      },
+      {
+        "Month": "September",
+        "Cancelled": 2766,
+        "Delayed": 2723,
+        "On Time": 2660,
+        "Total Records": 8149,
+        "Percentage": 8.26
+      },
+      {
+        "Month": "October",
+        "Cancelled": 2797,
+        "Delayed": 2775,
+        "On Time": 2843,
+        "Total Records": 8415,
+        "Percentage": 8.53
+      },
+      {
+        "Month": "November",
+        "Cancelled": 2678,
+        "Delayed": 2700,
+        "On Time": 2675,
+        "Total Records": 8053,
+        "Percentage": 8.17
+      },
+      {
+        "Month": "December",
+        "Cancelled": 2702,
+        "Delayed": 2605,
+        "On Time": 2617,
+        "Total Records": 7924,
+        "Percentage": 8.03
+      }
+    ],
+    "weekday_summary": [
+      {
+        "Day": "Monday",
+        "Cancelled": 4751,
+        "Delayed": 4700,
+        "On Time": 4581,
+        "Total Records": 14032,
+        "Percentage": 14.23,
+        "Week Type": "Weekday"
+      },
+      {
+        "Day": "Tuesday",
+        "Cancelled": 4645,
+        "Delayed": 4757,
+        "On Time": 4646,
+        "Total Records": 14048,
+        "Percentage": 14.24,
+        "Week Type": "Weekday"
+      },
+      {
+        "Day": "Wednesday",
+        "Cancelled": 4653,
+        "Delayed": 4610,
+        "On Time": 4676,
+        "Total Records": 13939,
+        "Percentage": 14.13,
+        "Week Type": "Weekday"
+      },
+      {
+        "Day": "Thursday",
+        "Cancelled": 4757,
+        "Delayed": 4662,
+        "On Time": 4808,
+        "Total Records": 14227,
+        "Percentage": 14.43,
+        "Week Type": "Weekday"
+      },
+      {
+        "Day": "Friday",
+        "Cancelled": 4831,
+        "Delayed": 4707,
+        "On Time": 4689,
+        "Total Records": 14227,
+        "Percentage": 14.43,
+        "Week Type": "Weekday"
+      },
+      {
+        "Day": "Saturday",
+        "Cancelled": 4569,
+        "Delayed": 4649,
+        "On Time": 4639,
+        "Total Records": 13857,
+        "Percentage": 14.05,
+        "Week Type": "Weekend"
+      },
+      {
+        "Day": "Sunday",
+        "Cancelled": 4736,
+        "Delayed": 4746,
+        "On Time": 4807,
+        "Total Records": 14289,
+        "Percentage": 14.49,
+        "Week Type": "Weekend"
+      }
+    ],
+    "year_summary": [
+      {
+        "Departure Year": 2022,
+        "Cancelled": 32942,
+        "Delayed": 32831,
+        "On Time": 32846,
+        "Total Records": 98619,
+        "Percentage": 100.0
+      }
+    ],
+    "weekend_status_summary": [
+      {
+        "Weekend/Weekday": "Weekday",
+        "Cancelled": 23637,
+        "Delayed": 23436,
+        "On Time": 23400,
+        "Total Records": 70473,
+        "Cancelled %": 33.54,
+        "Delayed %": 33.26,
+        "On Time %": 33.2
+      },
+      {
+        "Weekend/Weekday": "Weekend",
+        "Cancelled": 9305,
+        "Delayed": 9395,
+        "On Time": 9446,
+        "Total Records": 28146,
+        "Cancelled %": 33.06,
+        "Delayed %": 33.38,
+        "On Time %": 33.56
+      }
+    ],
+    "nationality_continent_matrix": [
+      {
+        "Nationality": "China",
+        "Africa": 2068,
+        "Asia": 3527,
+        "Europe": 2278,
+        "North America": 5891,
+        "Oceania": 2537,
+        "South America": 2016,
+        "Total": 18317
+      },
+      {
+        "Nationality": "Indonesia",
+        "Africa": 1149,
+        "Asia": 2001,
+        "Europe": 1358,
+        "North America": 3397,
+        "Oceania": 1486,
+        "South America": 1168,
+        "Total": 10559
+      },
+      {
+        "Nationality": "Russia",
+        "Africa": 627,
+        "Asia": 1128,
+        "Europe": 722,
+        "North America": 1822,
+        "Oceania": 777,
+        "South America": 617,
+        "Total": 5693
+      },
+      {
+        "Nationality": "Philippines",
+        "Africa": 559,
+        "Asia": 995,
+        "Europe": 650,
+        "North America": 1702,
+        "Oceania": 754,
+        "South America": 579,
+        "Total": 5239
+      },
+      {
+        "Nationality": "Brazil",
+        "Africa": 436,
+        "Asia": 738,
+        "Europe": 438,
+        "North America": 1207,
+        "Oceania": 564,
+        "South America": 408,
+        "Total": 3791
+      },
+      {
+        "Nationality": "Portugal",
+        "Africa": 347,
+        "Asia": 595,
+        "Europe": 416,
+        "North America": 1058,
+        "Oceania": 500,
+        "South America": 383,
+        "Total": 3299
+      },
+      {
+        "Nationality": "Poland",
+        "Africa": 376,
+        "Asia": 633,
+        "Europe": 392,
+        "North America": 1082,
+        "Oceania": 428,
+        "South America": 334,
+        "Total": 3245
+      },
+      {
+        "Nationality": "France",
+        "Africa": 325,
+        "Asia": 525,
+        "Europe": 380,
+        "North America": 936,
+        "Oceania": 423,
+        "South America": 318,
+        "Total": 2907
+      },
+      {
+        "Nationality": "Sweden",
+        "Africa": 286,
+        "Asia": 454,
+        "Europe": 274,
+        "North America": 780,
+        "Oceania": 319,
+        "South America": 284,
+        "Total": 2397
+      },
+      {
+        "Nationality": "United States",
+        "Africa": 244,
+        "Asia": 377,
+        "Europe": 279,
+        "North America": 700,
+        "Oceania": 283,
+        "South America": 222,
+        "Total": 2105
+      },
+      {
+        "Nationality": "Japan",
+        "Africa": 215,
+        "Asia": 343,
+        "Europe": 220,
+        "North America": 587,
+        "Oceania": 237,
+        "South America": 203,
+        "Total": 1805
+      },
+      {
+        "Nationality": "Czech Republic",
+        "Africa": 175,
+        "Asia": 324,
+        "Europe": 213,
+        "North America": 537,
+        "Oceania": 246,
+        "South America": 195,
+        "Total": 1690
+      },
+      {
+        "Nationality": "Ukraine",
+        "Africa": 162,
+        "Asia": 296,
+        "Europe": 223,
+        "North America": 499,
+        "Oceania": 243,
+        "South America": 168,
+        "Total": 1591
+      },
+      {
+        "Nationality": "Peru",
+        "Africa": 177,
+        "Asia": 253,
+        "Europe": 202,
+        "North America": 497,
+        "Oceania": 248,
+        "South America": 163,
+        "Total": 1540
+      },
+      {
+        "Nationality": "Thailand",
+        "Africa": 139,
+        "Asia": 276,
+        "Europe": 186,
+        "North America": 489,
+        "Oceania": 204,
+        "South America": 132,
+        "Total": 1426
+      },
+      {
+        "Nationality": "Colombia",
+        "Africa": 132,
+        "Asia": 229,
+        "Europe": 193,
+        "North America": 447,
+        "Oceania": 180,
+        "South America": 129,
+        "Total": 1310
+      },
+      {
+        "Nationality": "Argentina",
+        "Africa": 154,
+        "Asia": 252,
+        "Europe": 166,
+        "North America": 436,
+        "Oceania": 171,
+        "South America": 129,
+        "Total": 1308
+      },
+      {
+        "Nationality": "Greece",
+        "Africa": 124,
+        "Asia": 212,
+        "Europe": 179,
+        "North America": 384,
+        "Oceania": 187,
+        "South America": 127,
+        "Total": 1213
+      },
+      {
+        "Nationality": "Canada",
+        "Africa": 146,
+        "Asia": 201,
+        "Europe": 164,
+        "North America": 394,
+        "Oceania": 166,
+        "South America": 127,
+        "Total": 1198
+      },
+      {
+        "Nationality": "Mexico",
+        "Africa": 110,
+        "Asia": 198,
+        "Europe": 149,
+        "North America": 348,
+        "Oceania": 142,
+        "South America": 107,
+        "Total": 1054
+      }
+    ],
+    "country_continent_consistency": {
+      "records_with_country": 98619,
+      "records_with_continent": 98619,
+      "records_with_both": 98619,
+      "records_missing_one_or_both": 0,
+      "coverage_percentage": 100.0
+    },
+    "date_coverage": {
+      "minimum": "2022-01-01",
+      "maximum": "2022-12-30",
+      "days": 364,
+      "years": [
+        2022
+      ]
+    },
+    "age_outlier_summary": {
+      "Q1": 23.0,
+      "Q3": 68.0,
+      "IQR": 45.0,
+      "lower_bound": -44.5,
+      "upper_bound": 135.5,
+      "outlier_count": 0
+    },
+    "numeric_correlations": {
+      "Age": {
+        "Age": 1.0,
+        "Departure Year": null,
+        "Departure Month": -0.0013,
+        "Departure Day": 0.0048
+      },
+      "Departure Year": {
+        "Age": null,
+        "Departure Year": null,
+        "Departure Month": null,
+        "Departure Day": null
+      },
+      "Departure Month": {
+        "Age": -0.0013,
+        "Departure Year": null,
+        "Departure Month": 1.0,
+        "Departure Day": 0.003
+      },
+      "Departure Day": {
+        "Age": 0.0048,
+        "Departure Year": null,
+        "Departure Month": 0.003,
+        "Departure Day": 1.0
+      }
+    },
+    "status_rate_by_gender": [
+      {
+        "Gender": "Female",
+        "Cancelled": 33.56,
+        "Delayed": 33.23,
+        "On Time": 33.21,
+        "Total Records": 49021
+      },
+      {
+        "Gender": "Male",
+        "Cancelled": 33.25,
+        "Delayed": 33.35,
+        "On Time": 33.4,
+        "Total Records": 49598
+      }
+    ],
+    "status_rate_by_age_group": [
+      {
+        "Age Group": "Adult",
+        "Cancelled": 33.4,
+        "Delayed": 33.23,
+        "On Time": 33.38,
+        "Total Records": 32909
+      },
+      {
+        "Age Group": "Child",
+        "Cancelled": 33.33,
+        "Delayed": 33.36,
+        "On Time": 33.31,
+        "Total Records": 13047
+      },
+      {
+        "Age Group": "Senior",
+        "Cancelled": 33.35,
+        "Delayed": 33.51,
+        "On Time": 33.15,
+        "Total Records": 33872
+      },
+      {
+        "Age Group": "Teenager",
+        "Cancelled": 33.52,
+        "Delayed": 33.12,
+        "On Time": 33.36,
+        "Total Records": 7684
+      },
+      {
+        "Age Group": "Young Adult",
+        "Cancelled": 33.6,
+        "Delayed": 32.86,
+        "On Time": 33.54,
+        "Total Records": 11107
+      }
+    ],
+    "status_rate_by_continent": [
+      {
+        "Continents": "Africa",
+        "Cancelled": 33.16,
+        "Delayed": 33.13,
+        "On Time": 33.72,
+        "Total Records": 11030
+      },
+      {
+        "Continents": "Asia",
+        "Cancelled": 33.45,
+        "Delayed": 33.05,
+        "On Time": 33.49,
+        "Total Records": 18637
+      },
+      {
+        "Continents": "Europe",
+        "Cancelled": 33.2,
+        "Delayed": 33.87,
+        "On Time": 32.93,
+        "Total Records": 12335
+      },
+      {
+        "Continents": "North America",
+        "Cancelled": 33.38,
+        "Delayed": 33.39,
+        "On Time": 33.23,
+        "Total Records": 32033
+      },
+      {
+        "Continents": "Oceania",
+        "Cancelled": 33.31,
+        "Delayed": 33.42,
+        "On Time": 33.27,
+        "Total Records": 13866
+      },
+      {
+        "Continents": "South America",
+        "Cancelled": 33.99,
+        "Delayed": 32.74,
+        "On Time": 33.27,
+        "Total Records": 10718
+      }
+    ],
+    "status_rate_by_travel_type": [
+      {
+        "Domestic/International": "Domestic",
+        "Cancelled": 34.48,
+        "Delayed": 33.07,
+        "On Time": 32.45,
+        "Total Records": 1775
+      },
+      {
+        "Domestic/International": "International",
+        "Cancelled": 33.38,
+        "Delayed": 33.29,
+        "On Time": 33.32,
+        "Total Records": 96844
+      }
+    ],
+    "top_on_time_airports": [
+      {
+        "label": "San Pedro Airport",
+        "value": 17
+      },
+      {
+        "label": "Santa Ana Airport",
+        "value": 15
+      },
+      {
+        "label": "Mercer County Airport",
+        "value": 13
+      },
+      {
+        "label": "Mount Pleasant Airport",
+        "value": 13
+      },
+      {
+        "label": "Böblingen Flugfeld",
+        "value": 13
+      },
+      {
+        "label": "OR Tambo International Airport",
+        "value": 13
+      },
+      {
+        "label": "Del Caribe Santiago Mariño International Airport",
+        "value": 13
+      },
+      {
+        "label": "Council Airport",
+        "value": 12
+      },
+      {
+        "label": "Newcastle Airport",
+        "value": 12
+      },
+      {
+        "label": "Zaraza Airport",
+        "value": 12
+      }
+    ],
+    "top_delayed_airports": [
+      {
+        "label": "Santa Maria Airport",
+        "value": 17
+      },
+      {
+        "label": "Santa Rosa Airport",
+        "value": 16
+      },
+      {
+        "label": "San Pedro Airport",
+        "value": 15
+      },
+      {
+        "label": "Santa Ana Airport",
+        "value": 14
+      },
+      {
+        "label": "Visby Airport",
+        "value": 13
+      },
+      {
+        "label": "Lake County Airport",
+        "value": 13
+      },
+      {
+        "label": "Sawan Airport",
+        "value": 13
+      },
+      {
+        "label": "La Florida Airport",
+        "value": 12
+      },
+      {
+        "label": "Chu Lai International Airport",
+        "value": 12
+      },
+      {
+        "label": "Grant County Airport",
+        "value": 12
+      }
+    ],
+    "top_cancelled_airports": [
+      {
+        "label": "Yangzhou Taizhou Airport",
+        "value": 13
+      },
+      {
+        "label": "Kiunga Airport",
+        "value": 13
+      },
+      {
+        "label": "Mae Hong Son Airport",
+        "value": 13
+      },
+      {
+        "label": "Böblingen Flugfeld",
+        "value": 13
+      },
+      {
+        "label": "Danilo Atienza Air Base",
+        "value": 12
+      },
+      {
+        "label": "Circle Hot Springs Airport",
+        "value": 12
+      },
+      {
+        "label": "Capital City Airport",
+        "value": 12
+      },
+      {
+        "label": "Klagenfurt Airport",
+        "value": 12
+      },
+      {
+        "label": "Marion Municipal Airport",
+        "value": 12
+      },
+      {
+        "label": "Santa Maria Airport",
+        "value": 12
+      }
+    ]
+  },
+  "quality_appendix": {
+    "raw_duplicates": 0,
+    "raw_missing_by_field": {
+      "Gender": 0,
+      "Age": 0,
+      "Nationality": 0,
+      "Airport Name": 0,
+      "Country Name": 0,
+      "Continents": 0,
+      "Departure Date": 0,
+      "Arrival Airport": 0,
+      "Flight Status": 0,
+      "Departure Year": 0,
+      "Departure Month": 0,
+      "Departure Month Name": 0,
+      "Departure Day": 0,
+      "Day of Week": 0,
+      "Weekend/Weekday": 0,
+      "Age Group": 0,
+      "Domestic/International": 0,
+      "Age Histogram": 0
+    },
+    "processed_field_quality": {
+      "Gender": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 2
+      },
+      "Age": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 90
+      },
+      "Nationality": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 240
+      },
+      "Airport Name": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 9062
+      },
+      "Country Name": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 235
+      },
+      "Continents": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 6
+      },
+      "Departure Date": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 364
+      },
+      "Arrival Airport": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 9024
+      },
+      "Flight Status": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 3
+      },
+      "Departure Year": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 1
+      },
+      "Departure Month": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 12
+      },
+      "Departure Month Name": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 12
+      },
+      "Departure Day": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 31
+      },
+      "Day of Week": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 7
+      },
+      "Weekend/Weekday": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 2
+      },
+      "Age Group": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 5
+      },
+      "Domestic/International": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 2
+      },
+      "Age Histogram": {
+        "valid_records": 98619,
+        "missing_records": 0,
+        "completeness_percentage": 100.0,
+        "unique_values": 10
+      }
+    },
+    "processed_row_completeness": {
+      "complete_records": 98619,
+      "incomplete_records": 0,
+      "complete_percentage": 100.0,
+      "average_missing_fields_per_record": 0.0
+    },
+    "category_validation": {
+      "Gender": {
+        "observed_values": [
+          "Female",
+          "Male"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      },
+      "Flight Status": {
+        "observed_values": [
+          "Cancelled",
+          "Delayed",
+          "On Time"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      },
+      "Continents": {
+        "observed_values": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      },
+      "Age Group": {
+        "observed_values": [
+          "Adult",
+          "Child",
+          "Senior",
+          "Teenager",
+          "Young Adult"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      },
+      "Domestic/International": {
+        "observed_values": [
+          "Domestic",
+          "International"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      },
+      "Weekend/Weekday": {
+        "observed_values": [
+          "Weekday",
+          "Weekend"
+        ],
+        "unexpected_values": [],
+        "valid": true
+      }
+    }
+  },
+  "academic_appendix": {
+    "report_outline": [
+      "1. Data Collection",
+      "2. Data Loading",
+      "3. Data Exploration",
+      "4. Data Cleaning",
+      "5. Feature Engineering",
+      "6. Exploratory Data Analysis",
+      "7. Data Visualization",
+      "8. Statistical Analysis",
+      "9. Data Interpretation / Insights",
+      "10. Reporting / Presentation of Findings"
+    ],
+    "metric_definitions": {
+      "total_records": "Number of processed passenger/flight records.",
+      "average_age": "Arithmetic mean of the cleaned Age field.",
+      "nationalities": "Number of distinct non-empty Nationality values.",
+      "airports": "Number of distinct departure Airport Name values.",
+      "arrival_airports": "Number of distinct Arrival Airport values.",
+      "continents": "Number of distinct Continents values.",
+      "flight_status": "Frequency of Cancelled, Delayed, and On Time records.",
+      "age_group": "Frequency of the five engineered Age Group categories.",
+      "time_analysis": "Counts grouped by departure year, month, and day of week.",
+      "chi_square": "Chi-square test of independence between categorical variables and Flight Status."
+    },
+    "record_level_validation": {
+      "age_between_1_and_100": true,
+      "departure_dates_valid": true,
+      "gender_values_valid": true,
+      "status_values_valid": true,
+      "continent_values_valid": true,
+      "age_group_values_valid": true,
+      "all_checks_passed": true
+    },
+    "gender_status_summary": [
+      {
+        "Gender": "Female",
+        "Cancelled": 16452,
+        "Delayed": 16291,
+        "On Time": 16278,
+        "Total": 49021,
+        "On Time %": 33.21,
+        "Delayed %": 33.23,
+        "Cancelled %": 33.56
+      },
+      {
+        "Gender": "Male",
+        "Cancelled": 16490,
+        "Delayed": 16540,
+        "On Time": 16568,
+        "Total": 49598,
+        "On Time %": 33.4,
+        "Delayed %": 33.35,
+        "Cancelled %": 33.25
+      }
+    ],
+    "airport_country_summary": [
+      {
+        "Airport Name": "Böblingen Flugfeld",
+        "Country Name": "Germany",
+        "Continents": "Europe",
+        "Records": 36,
+        "Percentage": 0.04
+      },
+      {
+        "Airport Name": "Mae Hong Son Airport",
+        "Country Name": "Thailand",
+        "Continents": "Asia",
+        "Records": 29,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Capital City Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 28,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Punta Colorada Airport",
+        "Country Name": "Mexico",
+        "Continents": "North America",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Yangzhou Taizhou Airport",
+        "Country Name": "China",
+        "Continents": "Asia",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Marion Municipal Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Lake County Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 27,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Lawrence Municipal Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 26,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Zaraza Airport",
+        "Country Name": "Venezuela, Bolivarian Republic of",
+        "Continents": "South America",
+        "Records": 26,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Grant County Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 26,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Plymouth Municipal Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Amchitka Army Airfield",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Santa Terezinha Airport",
+        "Country Name": "Brazil",
+        "Continents": "South America",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Great Falls International Airport",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 25,
+        "Percentage": 0.03
+      },
+      {
+        "Airport Name": "Lanzhou Zhongchuan Airport",
+        "Country Name": "China",
+        "Continents": "Asia",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Airport Name": "Danilo Atienza Air Base",
+        "Country Name": "Philippines",
+        "Continents": "Asia",
+        "Records": 24,
+        "Percentage": 0.02
+      },
+      {
+        "Airport Name": "Mampikony Airport",
+        "Country Name": "Madagascar",
+        "Continents": "Africa",
+        "Records": 23,
+        "Percentage": 0.02
+      },
+      {
+        "Airport Name": "Lonely Air Station",
+        "Country Name": "United States",
+        "Continents": "North America",
+        "Records": 23,
+        "Percentage": 0.02
+      },
+      {
+        "Airport Name": "Del Caribe Santiago Mariño International Airport",
+        "Country Name": "Venezuela, Bolivarian Republic of",
+        "Continents": "South America",
+        "Records": 23,
+        "Percentage": 0.02
+      },
+      {
+        "Airport Name": "Santa Ana Airport",
+        "Country Name": "Colombia",
+        "Continents": "South America",
+        "Records": 23,
+        "Percentage": 0.02
+      }
+    ],
+    "flight_status_by_month": [
+      {
+        "Month": "January",
+        "Cancelled": 2747,
+        "Delayed": 2868,
+        "On Time": 2801,
+        "Total": 8416,
+        "Cancelled %": 32.64,
+        "Delayed %": 34.08,
+        "On Time %": 33.28
+      },
+      {
+        "Month": "February",
+        "Cancelled": 2565,
+        "Delayed": 2537,
+        "On Time": 2551,
+        "Total": 7653,
+        "Cancelled %": 33.52,
+        "Delayed %": 33.15,
+        "On Time %": 33.33
+      },
+      {
+        "Month": "March",
+        "Cancelled": 2776,
+        "Delayed": 2794,
+        "On Time": 2861,
+        "Total": 8431,
+        "Cancelled %": 32.93,
+        "Delayed %": 33.14,
+        "On Time %": 33.93
+      },
+      {
+        "Month": "April",
+        "Cancelled": 2645,
+        "Delayed": 2715,
+        "On Time": 2599,
+        "Total": 7959,
+        "Cancelled %": 33.23,
+        "Delayed %": 34.11,
+        "On Time %": 32.65
+      },
+      {
+        "Month": "May",
+        "Cancelled": 2846,
+        "Delayed": 2853,
+        "On Time": 2797,
+        "Total": 8496,
+        "Cancelled %": 33.5,
+        "Delayed %": 33.58,
+        "On Time %": 32.92
+      },
+      {
+        "Month": "June",
+        "Cancelled": 2756,
+        "Delayed": 2678,
+        "On Time": 2694,
+        "Total": 8128,
+        "Cancelled %": 33.91,
+        "Delayed %": 32.95,
+        "On Time %": 33.14
+      },
+      {
+        "Month": "July",
+        "Cancelled": 2800,
+        "Delayed": 2778,
+        "On Time": 2873,
+        "Total": 8451,
+        "Cancelled %": 33.13,
+        "Delayed %": 32.87,
+        "On Time %": 34.0
+      },
+      {
+        "Month": "August",
+        "Cancelled": 2864,
+        "Delayed": 2805,
+        "On Time": 2875,
+        "Total": 8544,
+        "Cancelled %": 33.52,
+        "Delayed %": 32.83,
+        "On Time %": 33.65
+      },
+      {
+        "Month": "September",
+        "Cancelled": 2766,
+        "Delayed": 2723,
+        "On Time": 2660,
+        "Total": 8149,
+        "Cancelled %": 33.94,
+        "Delayed %": 33.42,
+        "On Time %": 32.64
+      },
+      {
+        "Month": "October",
+        "Cancelled": 2797,
+        "Delayed": 2775,
+        "On Time": 2843,
+        "Total": 8415,
+        "Cancelled %": 33.24,
+        "Delayed %": 32.98,
+        "On Time %": 33.78
+      },
+      {
+        "Month": "November",
+        "Cancelled": 2678,
+        "Delayed": 2700,
+        "On Time": 2675,
+        "Total": 8053,
+        "Cancelled %": 33.25,
+        "Delayed %": 33.53,
+        "On Time %": 33.22
+      },
+      {
+        "Month": "December",
+        "Cancelled": 2702,
+        "Delayed": 2605,
+        "On Time": 2617,
+        "Total": 7924,
+        "Cancelled %": 34.1,
+        "Delayed %": 32.87,
+        "On Time %": 33.03
+      }
+    ],
+    "flight_status_by_continent": [
+      {
+        "Continents": "Africa",
+        "Cancelled": 3657,
+        "Delayed": 3654,
+        "On Time": 3719,
+        "Total": 11030,
+        "On Time %": 33.72,
+        "Delayed %": 33.13,
+        "Cancelled %": 33.16
+      },
+      {
+        "Continents": "Asia",
+        "Cancelled": 6235,
+        "Delayed": 6160,
+        "On Time": 6242,
+        "Total": 18637,
+        "On Time %": 33.49,
+        "Delayed %": 33.05,
+        "Cancelled %": 33.45
+      },
+      {
+        "Continents": "Europe",
+        "Cancelled": 4095,
+        "Delayed": 4178,
+        "On Time": 4062,
+        "Total": 12335,
+        "On Time %": 32.93,
+        "Delayed %": 33.87,
+        "Cancelled %": 33.2
+      },
+      {
+        "Continents": "North America",
+        "Cancelled": 10693,
+        "Delayed": 10696,
+        "On Time": 10644,
+        "Total": 32033,
+        "On Time %": 33.23,
+        "Delayed %": 33.39,
+        "Cancelled %": 33.38
+      },
+      {
+        "Continents": "Oceania",
+        "Cancelled": 4619,
+        "Delayed": 4634,
+        "On Time": 4613,
+        "Total": 13866,
+        "On Time %": 33.27,
+        "Delayed %": 33.42,
+        "Cancelled %": 33.31
+      },
+      {
+        "Continents": "South America",
+        "Cancelled": 3643,
+        "Delayed": 3509,
+        "On Time": 3566,
+        "Total": 10718,
+        "On Time %": 33.27,
+        "Delayed %": 32.74,
+        "Cancelled %": 33.99
+      }
+    ],
+    "passenger_age_by_nationality": [
+      {
+        "Nationality": "China",
+        "Records": 18317,
+        "Average_Age": 45.24
+      },
+      {
+        "Nationality": "Indonesia",
+        "Records": 10559,
+        "Average_Age": 45.42
+      },
+      {
+        "Nationality": "Russia",
+        "Records": 5693,
+        "Average_Age": 45.37
+      },
+      {
+        "Nationality": "Philippines",
+        "Records": 5239,
+        "Average_Age": 45.81
+      },
+      {
+        "Nationality": "Brazil",
+        "Records": 3791,
+        "Average_Age": 45.27
+      },
+      {
+        "Nationality": "Portugal",
+        "Records": 3299,
+        "Average_Age": 46.29
+      },
+      {
+        "Nationality": "Poland",
+        "Records": 3245,
+        "Average_Age": 46.14
+      },
+      {
+        "Nationality": "France",
+        "Records": 2907,
+        "Average_Age": 45.58
+      },
+      {
+        "Nationality": "Sweden",
+        "Records": 2397,
+        "Average_Age": 44.82
+      },
+      {
+        "Nationality": "United States",
+        "Records": 2105,
+        "Average_Age": 45.86
+      },
+      {
+        "Nationality": "Japan",
+        "Records": 1805,
+        "Average_Age": 45.6
+      },
+      {
+        "Nationality": "Czech Republic",
+        "Records": 1690,
+        "Average_Age": 44.14
+      },
+      {
+        "Nationality": "Ukraine",
+        "Records": 1591,
+        "Average_Age": 46.98
+      },
+      {
+        "Nationality": "Peru",
+        "Records": 1540,
+        "Average_Age": 45.52
+      },
+      {
+        "Nationality": "Thailand",
+        "Records": 1426,
+        "Average_Age": 45.73
+      },
+      {
+        "Nationality": "Colombia",
+        "Records": 1310,
+        "Average_Age": 45.84
+      },
+      {
+        "Nationality": "Argentina",
+        "Records": 1308,
+        "Average_Age": 44.86
+      },
+      {
+        "Nationality": "Greece",
+        "Records": 1213,
+        "Average_Age": 44.5
+      },
+      {
+        "Nationality": "Canada",
+        "Records": 1198,
+        "Average_Age": 46.23
+      },
+      {
+        "Nationality": "Mexico",
+        "Records": 1054,
+        "Average_Age": 45.27
+      }
+    ]
+  }
+}
