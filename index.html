@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Airline Data Analysis and Visualization System">
+  <title>ALTAIR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img class="brand-logo" src="assets/altair-logo.png" alt="ALTAIR logo">
+        <div>
+          <strong>ALTAIR</strong>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#passengers"><span>👥</span> Passengers</a>
+        <a class="nav-link" href="#flights"><span>✈</span> Flights</a>
+        <a class="nav-link" href="#geography"><span>🌍</span> Geography</a>
+        <a class="nav-link" href="#time-analysis"><span>◷</span> Time Analysis</a>
+        <a class="nav-link" href="#airports"><span>⌂</span> Airports</a>
+        <a class="nav-link" href="#statistics"><span>∑</span> Statistics</a>
+        <a class="nav-link" href="#explorer"><span>⌕</span> Data Explorer</a>
+        <a class="nav-link" href="#insights"><span>◆</span> Insights</a>
+      </nav>
+
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">☾</button>
+      </header>
+
+      <div class="content">
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="page-section active-section">
+          <div class="hero">
+            <div>
+              <span class="eyebrow">AIRLINE DATASET</span>
+              <h2>Passenger & Flight Intelligence</h2>
+              <p>
+                Explore passenger demographics, geographic distribution,
+                airport activity, flight status and time-based patterns
+                using a structured data-analysis workflow.
+              </p>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span>Total Records</span>
+              <strong id="kpiRecords">—</strong>
+              <small>Processed passenger records</small>
+            </div>
+            <div class="kpi-card">
+              <span>Average Age</span>
+              <strong id="kpiAge">—</strong>
+              <small>Years</small>
+            </div>
+            <div class="kpi-card">
+              <span>Nationalities</span>
+              <strong id="kpiNationality">—</strong>
+              <small>Unique nationalities</small>
+            </div>
+            <div class="kpi-card">
+              <span>Airports</span>
+              <strong id="kpiAirports">—</strong>
+              <small>Departure airports</small>
+            </div>
+            <div class="kpi-card">
+              <span>Arrival Airports</span>
+              <strong id="kpiArrival">—</strong>
+              <small>Unique arrival codes</small>
+            </div>
+            <div class="kpi-card">
+              <span>Continents</span>
+              <strong id="kpiContinents">—</strong>
+              <small>Geographic regions</small>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">AT A GLANCE</span>
+              <h3>Key patterns</h3>
+            </div>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head">
+                <div><h3>Flight Status</h3><p>Overall status distribution</p></div>
+              </div>
+              <div class="chart-wrap doughnut-wrap"><canvas id="statusChart"></canvas></div>
+            </article>
+
+            <article class="chart-card">
+              <div class="card-head">
+                <div><h3>Passengers by Continent</h3><p>Geographic distribution</p></div>
+              </div>
+              <div class="chart-wrap"><canvas id="continentChart"></canvas></div>
+            </article>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head">
+                <div><h3>Age Distribution</h3><p>Passenger age groups</p></div>
+              </div>
+              <div class="chart-wrap"><canvas id="ageChart"></canvas></div>
+            </article>
+
+            <article class="chart-card">
+              <div class="card-head">
+                <div><h3>Monthly Flight Trend</h3><p>Departure records by month</p></div>
+              </div>
+              <div class="chart-wrap"><canvas id="monthChart"></canvas></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- PASSENGERS -->
+        <section id="passengers" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">PASSENGER ANALYSIS</span>
+            <h2>Who is travelling?</h2>
+            <p>Demographic analysis using gender, age, age group and nationality.</p>
+          </div>
+
+          <div class="mini-stats">
+            <div><span>Mean Age</span><strong id="statMeanAge">—</strong></div>
+            <div><span>Median Age</span><strong id="statMedianAge">—</strong></div>
+            <div><span>Youngest</span><strong id="statMinAge">—</strong></div>
+            <div><span>Oldest</span><strong id="statMaxAge">—</strong></div>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Gender Distribution</h3><p>Passenger count by gender</p></div></div>
+              <div class="chart-wrap doughnut-wrap"><canvas id="genderChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Age Groups</h3><p>Passenger segmentation</p></div></div>
+              <div class="chart-wrap"><canvas id="ageGroupChart"></canvas></div>
+            </article>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Top 10 Nationalities</h3><p>Most represented nationalities</p></div></div>
+              <div class="chart-wrap tall"><canvas id="nationalityChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Age Distribution</h3><p>Histogram-style grouping</p></div></div>
+              <div class="chart-wrap tall"><canvas id="ageHistChart"></canvas></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- FLIGHTS -->
+        <section id="flights" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">FLIGHT ANALYSIS</span>
+            <h2>Flight status patterns</h2>
+            <p>Compare flight status across passenger and geographic categories.</p>
+          </div>
+
+          <div class="status-cards" id="statusCards"></div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Status by Gender</h3><p>Cross-tabulation</p></div></div>
+              <div class="chart-wrap"><canvas id="genderStatusChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Status by Age Group</h3><p>Cross-tabulation</p></div></div>
+              <div class="chart-wrap"><canvas id="ageStatusChart"></canvas></div>
+            </article>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Status by Continent</h3><p>Geographic comparison</p></div></div>
+              <div class="chart-wrap tall"><canvas id="continentStatusChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Approx. Domestic / International</h3><p>Nationality vs airport country comparison</p></div></div>
+              <div class="chart-wrap"><canvas id="domesticStatusChart"></canvas></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- GEOGRAPHY -->
+        <section id="geography" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">GEOGRAPHIC ANALYSIS</span>
+            <h2>Where are passengers represented?</h2>
+            <p>Explore continents, airport countries and passenger nationalities.</p>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Passenger Distribution</h3><p>By continent</p></div></div>
+              <div class="chart-wrap"><canvas id="geoContinentChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Top Airport Countries</h3><p>Country Name frequency</p></div></div>
+              <div class="chart-wrap tall"><canvas id="countryChart"></canvas></div>
+            </article>
+          </div>
+
+          <article class="table-card">
+            <div class="card-head"><div><h3>Average Age by Continent</h3><p>Descriptive comparison</p></div></div>
+            <div id="continentAgeTable"></div>
+          </article>
+        </section>
+
+        <!-- TIME -->
+        <section id="time-analysis" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">TIME ANALYSIS</span>
+            <h2>When do flights occur?</h2>
+            <p>Departure year, month, day-of-week and flight-status trends.</p>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Flights by Year</h3><p>Annual departure records</p></div></div>
+              <div class="chart-wrap"><canvas id="yearChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Flights by Day of Week</h3><p>Monday to Sunday</p></div></div>
+              <div class="chart-wrap"><canvas id="dayChart"></canvas></div>
+            </article>
+          </div>
+
+          <article class="chart-card">
+            <div class="card-head"><div><h3>Flight Status by Month</h3><p>Monthly comparison of recorded statuses</p></div></div>
+            <div class="chart-wrap large"><canvas id="statusMonthChart"></canvas></div>
+          </article>
+        </section>
+
+        <!-- AIRPORTS -->
+        <section id="airports" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">AIRPORT ANALYSIS</span>
+            <h2>Airport activity</h2>
+            <p>Identify the most frequently represented departure and arrival airports.</p>
+          </div>
+
+          <div class="chart-grid two">
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Top 10 Departure Airports</h3><p>Airport Name frequency</p></div></div>
+              <div class="chart-wrap tall"><canvas id="airportChart"></canvas></div>
+            </article>
+            <article class="chart-card">
+              <div class="card-head"><div><h3>Top 10 Arrival Airports</h3><p>Arrival Airport frequency</p></div></div>
+              <div class="chart-wrap tall"><canvas id="arrivalChart"></canvas></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section id="statistics" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">STATISTICAL ANALYSIS</span>
+            <h2>Descriptive & relationship analysis</h2>
+            <p>Summary statistics, cross-tabulations and Chi-square tests.</p>
+          </div>
+
+          <div class="stats-panel">
+            <div class="stat-box"><span>Mean Age</span><strong id="sMean">—</strong></div>
+            <div class="stat-box"><span>Median Age</span><strong id="sMedian">—</strong></div>
+            <div class="stat-box"><span>Minimum Age</span><strong id="sMin">—</strong></div>
+            <div class="stat-box"><span>Maximum Age</span><strong id="sMax">—</strong></div>
+            <div class="stat-box"><span>Std. Deviation</span><strong id="sStd">—</strong></div>
+          </div>
+
+          <article class="table-card">
+            <div class="card-head">
+              <div>
+                <h3>Chi-square tests</h3>
+                <p>Testing categorical association at α = 0.05</p>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table" id="chiTable">
+                <thead>
+                  <tr>
+                    <th>Variables</th>
+                    <th>Chi-square</th>
+                    <th>p-value</th>
+                    <th>df</th>
+                    <th>Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+
+          <div class="note">
+            <strong>How to read this:</strong> A p-value below 0.05 indicates a statistically significant association
+            between the two categorical variables in this dataset. Statistical significance does not by itself establish causation.
+          </div>
+        </section>
+
+        <!-- EXPLORER -->
+        <section id="explorer" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">DATA EXPLORER</span>
+            <h2>Explore processed records</h2>
+            <p>Search and filter the cleaned dataset used by the dashboard.</p>
+          </div>
+
+          <div class="filters">
+            <div class="filter-field search-field">
+              <label for="searchInput">Search records</label>
+              <div class="search-controls">
+                <select id="searchField" aria-label="Choose search field">
+                  <option value="Nationality" selected>Nationality</option>
+                  <option value="Country Name">Country</option>
+                  <option value="Airport Name">Departure Airport</option>
+                  <option value="Arrival Airport">Arrival Airport</option>
+                  <option value="Flight Status">Flight Status</option>
+                  <option value="Gender">Gender</option>
+                  <option value="Age">Age</option>
+                  <option value="Departure Date">Departure Date</option>
+                  <option value="ALL">All useful fields</option>
+                </select>
+                <input id="searchInput" type="search" placeholder="Search nationality..." autocomplete="off">
+              </div>
+              <small class="search-hint" id="searchHint">Searches Nationality only</small>
+            </div>
+            <div class="filter-field">
+              <label>Gender</label>
+              <select id="genderFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-field">
+              <label>Continent</label>
+              <select id="continentFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-field">
+              <label>Flight Status</label>
+              <select id="statusFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-field">
+              <label>Age Group</label>
+              <select id="ageFilter"><option value="">All</option></select>
+            </div>
+            <button class="primary-btn" id="applyFilters">Apply Filters</button>
+            <button class="secondary-btn" id="clearFilters">Clear</button>
+          </div>
+
+          <div class="explorer-info">
+            <span id="tableCount">Loading records…</span>
+            <div class="explorer-actions">
+              <button class="primary-btn" id="addRecord">+ Add Record</button>
+              <button class="secondary-btn" id="resetData">Reset Changes</button>
+              <button class="secondary-btn" id="downloadFiltered">Download Current View</button>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="data-table" id="dataTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <button id="prevPage" class="secondary-btn">← Previous</button>
+              <span id="pageInfo">Page 1</span>
+              <button id="nextPage" class="secondary-btn">Next →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- INSIGHTS -->
+        <section id="insights" class="page-section">
+          <div class="page-title">
+            <span class="eyebrow">DATA INTERPRETATION</span>
+            <h2>Key findings</h2>
+            <p>Automatically generated observations from the processed data.</p>
+          </div>
+          <div class="insight-grid" id="insightGrid"></div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="recordModal" aria-hidden="true">
+    <div class="record-modal" role="dialog" aria-modal="true" aria-labelledby="recordModalTitle">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">DATA RECORD</span>
+          <h3 id="recordModalTitle">Add Record</h3>
+        </div>
+        <button class="icon-btn" id="closeRecordModal" aria-label="Close">×</button>
+      </div>
+      <form id="recordForm">
+        <div class="record-form-grid">
+          <div class="filter-field"><label for="recordGender">Gender</label><input id="recordGender" name="Gender" required></div>
+          <div class="filter-field"><label for="recordAge">Age</label><input id="recordAge" name="Age" type="number" min="1" max="100" step="1" required></div>
+          <div class="filter-field"><label for="recordNationality">Nationality</label><input id="recordNationality" name="Nationality" required></div>
+          <div class="filter-field"><label for="recordAirport">Airport Name</label><input id="recordAirport" name="Airport Name" required></div>
+          <div class="filter-field"><label for="recordCountry">Country Name</label><input id="recordCountry" name="Country Name" required></div>
+          <div class="filter-field"><label for="recordContinent">Continent</label><input id="recordContinent" name="Continents" required></div>
+          <div class="filter-field"><label for="recordDate">Departure Date</label><input id="recordDate" name="Departure Date" type="date" required></div>
+          <div class="filter-field"><label for="recordArrival">Arrival Airport</label><input id="recordArrival" name="Arrival Airport" required></div>
+          <div class="filter-field"><label for="recordStatus">Flight Status</label><select id="recordStatus" name="Flight Status" required><option value="On Time">On Time</option><option value="Delayed">Delayed</option><option value="Cancelled">Cancelled</option></select></div>
+        </div>
+        <p class="modal-note">Age group, departure date details, weekend/weekday and domestic/international classification are calculated automatically.</p>
+        <div class="modal-actions">
+          <button type="button" class="secondary-btn" id="cancelRecord">Cancel</button>
+          <button type="submit" class="primary-btn" id="saveRecord">Save Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
