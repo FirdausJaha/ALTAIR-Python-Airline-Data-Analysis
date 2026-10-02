@@ -1,0 +1,4 @@
+# Dataset and generated analysis artifacts are data, not source code.
+data/* linguist-generated=true
+outputs/* linguist-generated=true
+assets/*.png linguist-generated=true
